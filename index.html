@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>school_receipt</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Times New Roman", serif;
+			font-size: 13px;
+		}
+
+		body,p,span,h1,h2,h3{
+			margin: 0;
+			padding: 0;
+		}
+		td{
+			vertical-align: top;
+			padding: 0 2px
+		}
+		table{
+			width: 100%;
+		}
+		table,tr,td{
+			border-collapse: collapse;
+		} 
+		.page {
+			width: 21cm;
+			margin: 0 auto;
+			border: 1px #D3D3D3 solid;
+			background: white;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+			padding: 40px 15px;
+			display: flex;
+		}
+		.content {
+			width: 100%;
+		}  
+		.receipt-main {
+			background: #ffffff none repeat scroll 0 0;
+			border-bottom: 12px solid #333333;
+			border-top: 12px solid #9f181c;
+			position: relative;
+			color: #333333;
+			font-family: open sans;
+		}
+		.receipt-main::after {
+			background: #414143 none repeat scroll 0 0;
+			content: "";
+			height: 5px;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: -13px;
+		}
+		.customer_img{
+			width: 71px; 
+			border-radius: 43px;
+		}
+		.receipt-right h5 {
+			font-size: 16px;
+			font-weight: bold;
+			margin: 0 0 7px 0;
+		}
+		.receipt-right i{
+			margin-left: 5px
+		}
+		.main_table th{
+            background-color: #414143;
+            color: #fff;
+            font-size: 15px;
+		}
+        .main_table td, .main_table th{
+        	padding: 10px 24px;
+        	font-size: 14px
+        }
+        .main_table td:nth-child(1), .main_table th:nth-child(1){
+        	width: 70%;
+        }
+        .main_table tfoot.sub_footer tr td{
+        	font-weight: 600;
+        	text-align: right;
+        	border: 0;
+        	border-right: 1px solid #dee2e6;
+        	padding:5px 24px; 
+        }
+        .main_table tfoot.sub_footer tr td:last-child{
+        	text-align: left
+        }
+        .main_table tfoot.sub_footer tr:last-child td{
+        	border-top: 1px solid #dee2e6;
+        	font-size: 20px;
+        	text-transform: uppercase;
+        }
+        .main_table tfoot.sub_footer tr:last-child td:last-child{
+        	color: #9f181c;
+        	font-weight: 700
+        }
+		.btn_group{
+			padding: 10px 0;
+			text-align: center
+		}
+		.btn_group{
+			padding: 10px 0;
+			text-align: center
+		}
+		.print_btn{
+			box-shadow: none;
+			color: #fff;
+			background-color: #007bff;
+			border-color: #007bff;
+			border: 1px solid transparent;
+			padding: 8px 20px;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.footer{
+			margin: 10px 0;
+			display: flex;
+			justify-content: space-between;
+		}
+        .footer_left p{
+        	font-size: 18px;
+        	font-weight: 600;
+        }
+        .footer_left p span{
+        	font-weight: 100;
+        	font-size: 15px;
+        }
+        .footer_left > span{
+        	font-size: 18px;
+        	color: #8c8c8c;
+        	font-style: italic;
+        }
+		@media print {
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Times New Roman", serif;
+				font-size: 12px;
+			}
+			body,p,span,h1,h2,h3{
+				margin: 0;
+				padding: 0;
+			}
+			td{
+				vertical-align: top;
+				padding: 0 2px;
+				
+			}
+			table{
+				width: 100%;
+			}
+			table,tr,td{
+				border-collapse: collapse;
+			}
+         .main_table tfoot.sub_footer tr td{
+         	border: 0 !important;
+        	border-right: 1px solid #dee2e6 !important;
+         }
+         .main_table tfoot.sub_footer tr:last-child td{
+         	border: 1px solid #dee2e6 !important
+         }
+         .main_table th {
+    background-color: #414143 !important;
+}
+
+			@page {   
+				margin: 0mm;
+				size: A4
+			}
+			.page {
+				margin: 0;
+				border-radius: initial;
+				width: initial;
+				height: 100%;
+				box-shadow: initial;
+				padding: 30px 20px;
+				page-break-after: always;
+				background: #e7f4f8
+			}
+			.btn_group{
+				display: none
+			}
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="btn_group">   
+		<button class="print_btn">print</button>
+	</div>
+
+	<div class="page  receipt-main">
+		<div class="container">
+			<!-- receipt_header -->
+			<div class="row justify-content-between">
+				<div class="col-3">
+					<img class="img-fluid customer_img" alt="iamgurdeeposahan" src="https://bootdey.com/img/Content/avatar/avatar6.png">
+				</div>
+				<div class="col-6">
+					<div class="receipt-right text-right">
+						<h5>school Name.</h5>
+						<p>+1 3649-6589 <i class="fa fa-phone"></i> </p>
+						<p>company@gmail.com <i class="fa fa-envelope"></i> </p>
+						<p>USA  <i class="fa fa-location-arrow"></i> </p>
+					</div>
+				</div>	
+			</div>
+<!-- receipt_header -->
+			<div class="row justify-content-between align-items-center my-4">
+				<div class="col-3">
+					<div class="receipt-right"><h5>Customer Name</h5><p><b>Mobile :</b> +1 12345-4569</p><p><b>Email :</b> customer@gmail.com</p><p><b>Address :</b> New York, USA</p></div>
+				</div>
+				<div class="col-6">
+					<div class="receipt-right text-right">
+						<h3>INVOICE # 102</h3>
+					</div>
+				</div>	
+			</div>
+            <div class="row">
+            	<div class="col-12">
+            		<table class="table table-bordered main_table">
+  <thead>
+    <tr>
+      <th scope="col">Description</th>
+      <th scope="col">Amount</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    
+      <td>Payment for August 2016</td>
+      <td>15,000/-</td>
+     
+    </tr>
+   <tr>
+    
+      <td>Payment for August 2016</td>
+      <td>15,000/-</td>
+     
+    </tr>
+<tr>
+    
+      <td>Payment for August 2016</td>
+      <td>15,000/-</td>
+     
+    </tr>
+   </tbody>
+   <tfoot class="sub_footer">
+	 <tr>
+	     <td>Total Amount:</td>
+	      <td>65,500/-</td>
+	 </tr>
+	 <tr>
+	     <td>Late Fees:</td>
+	      <td>65,500/-</td>
+	 </tr>
+	 <tr>
+	     <td>Payable Amount:</td>
+	      <td>65,500/-</td>
+	 </tr>
+	  <tr>
+	     <td>Balance Due:</td>
+	      <td>65,500/-</td>
+	 </tr>
+	 <tr>
+			<td>total</td>
+			<td>555</td>
+		</tr>
+	</tfoot>
+
+
+</table>
+            	</div>
+            </div>
+
+           <div class="footer">
+           	<div class="footer_left">
+           		<p>Date : <span>15 Aug 2016</span></p>
+           		<span>Thanks for shopping.!</span>
+           	</div>
+           	<div class="footer_right">
+           		<p>STAMP</p>
+           	</div>
+           </div> 
+		</div>
+	</div>
+
+</body>
+</html>
